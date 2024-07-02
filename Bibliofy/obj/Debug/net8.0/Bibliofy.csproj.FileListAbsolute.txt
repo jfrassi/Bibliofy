@@ -1,0 +1,14 @@
+C:\Users\joao.gouvea\Documents\CURSOS\C#\Bibliofy\Bibliofy\bin\Debug\net8.0\Bibliofy.exe
+C:\Users\joao.gouvea\Documents\CURSOS\C#\Bibliofy\Bibliofy\bin\Debug\net8.0\Bibliofy.deps.json
+C:\Users\joao.gouvea\Documents\CURSOS\C#\Bibliofy\Bibliofy\bin\Debug\net8.0\Bibliofy.runtimeconfig.json
+C:\Users\joao.gouvea\Documents\CURSOS\C#\Bibliofy\Bibliofy\bin\Debug\net8.0\Bibliofy.dll
+C:\Users\joao.gouvea\Documents\CURSOS\C#\Bibliofy\Bibliofy\bin\Debug\net8.0\Bibliofy.pdb
+C:\Users\joao.gouvea\Documents\CURSOS\C#\Bibliofy\Bibliofy\obj\Debug\net8.0\Bibliofy.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joao.gouvea\Documents\CURSOS\C#\Bibliofy\Bibliofy\obj\Debug\net8.0\Bibliofy.AssemblyInfoInputs.cache
+C:\Users\joao.gouvea\Documents\CURSOS\C#\Bibliofy\Bibliofy\obj\Debug\net8.0\Bibliofy.AssemblyInfo.cs
+C:\Users\joao.gouvea\Documents\CURSOS\C#\Bibliofy\Bibliofy\obj\Debug\net8.0\Bibliofy.csproj.CoreCompileInputs.cache
+C:\Users\joao.gouvea\Documents\CURSOS\C#\Bibliofy\Bibliofy\obj\Debug\net8.0\Bibliofy.dll
+C:\Users\joao.gouvea\Documents\CURSOS\C#\Bibliofy\Bibliofy\obj\Debug\net8.0\refint\Bibliofy.dll
+C:\Users\joao.gouvea\Documents\CURSOS\C#\Bibliofy\Bibliofy\obj\Debug\net8.0\Bibliofy.pdb
+C:\Users\joao.gouvea\Documents\CURSOS\C#\Bibliofy\Bibliofy\obj\Debug\net8.0\Bibliofy.genruntimeconfig.cache
+C:\Users\joao.gouvea\Documents\CURSOS\C#\Bibliofy\Bibliofy\obj\Debug\net8.0\ref\Bibliofy.dll
