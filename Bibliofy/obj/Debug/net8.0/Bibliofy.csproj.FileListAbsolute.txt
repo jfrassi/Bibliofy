@@ -12,3 +12,4 @@ C:\Users\joao.gouvea\Documents\CURSOS\C#\Bibliofy\Bibliofy\obj\Debug\net8.0\refi
 C:\Users\joao.gouvea\Documents\CURSOS\C#\Bibliofy\Bibliofy\obj\Debug\net8.0\Bibliofy.pdb
 C:\Users\joao.gouvea\Documents\CURSOS\C#\Bibliofy\Bibliofy\obj\Debug\net8.0\Bibliofy.genruntimeconfig.cache
 C:\Users\joao.gouvea\Documents\CURSOS\C#\Bibliofy\Bibliofy\obj\Debug\net8.0\ref\Bibliofy.dll
+C:\Users\joao.gouvea\Documents\CURSOS\C#\Bibliofy\Bibliofy\obj\Debug\net8.0\Bibliofy.sourcelink.json
