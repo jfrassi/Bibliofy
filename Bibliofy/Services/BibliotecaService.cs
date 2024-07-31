@@ -16,24 +16,28 @@ public class BibliotecaService
         return livros;
     }
 
-    public void RemoverLivro(string isbn)
+    public void RemoverLivro(Livro livro)
     {
-        var livro = livros.Where(l => l.ISBN.Equals(isbn)).FirstOrDefault();
         livros.Remove(livro);
     }
 
-    public void AtualizarLivro(string isbn, Livro livroAtualizado)
+    public bool AtualizarLivro(Livro livro, string novoIsbn,string novoTitulo, string novoAutor, DateOnly novaData, Livro.Disponibilidade novoStatus )
     {
-        var livro = livros.Where(l => l.ISBN.Equals(isbn)).FirstOrDefault();
+        //if enorme, ou um case?
         if(livro != null)
         {
-            livro.Titulo = livroAtualizado.Titulo;
-            livro.Autor = livroAtualizado.Autor;
+            if(novoIsbn == null)
+            {
+            novoIsbn = livro.ISBN;
+            } //--------------------------------- Será que dá certo?
+
+            livro.AtualizarDados(novoIsbn, novoTitulo, novoAutor, novaData, novoStatus);
+            return true;
         }
         else
         {
             Console.WriteLine($"Desculpe! o livro não foi encontrado!");
-            
+            return false;
         }
     }
 }

@@ -51,4 +51,21 @@ public class Livro
     {
         Status = status;
     }
+
+
+    public void AtualizarDados(
+        string novoIsbn,
+        string novoTitulo,
+        string novoAutor,
+        DateOnly? novaData,
+        Disponibilidade? novoStatus
+       )
+    {
+        Titulo = novoTitulo;
+        Autor = novoAutor;
+        ISBN = novoIsbn;
+        DataPublicacao = novaData.Value;
+        Status = novoStatus.Value;
+
+    }
 }

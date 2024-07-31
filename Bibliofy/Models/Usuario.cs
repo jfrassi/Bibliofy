@@ -1,5 +1,5 @@
 namespace Bibliofy.Models;
-internal class Usuario
+public class Usuario
 {
     public int Codigo { get; protected set; }
     public string NomeUsu { get; protected set; }
@@ -29,5 +29,18 @@ internal class Usuario
     public void SetIdade(int idade)
     {
         Idade = idade;
+    }
+
+
+    public void AtualizarDadosUsuario
+    (
+        int novoCodigo,
+        string novoNome,
+        int novaIdade
+    )
+    {
+        Codigo = novoCodigo;
+        NomeUsu = novoNome;
+        Idade = novaIdade;
     }
 }

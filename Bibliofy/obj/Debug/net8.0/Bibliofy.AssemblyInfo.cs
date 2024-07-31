@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bibliofy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87cc08e6595fc5411f41d3f37ba3f9d7777f17a4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f3f4c4aa34f58bde9f94e22c0ec252fd779cad6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bibliofy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bibliofy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

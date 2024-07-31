@@ -13,7 +13,8 @@ internal class Biblioteca
         string endereco
     )
     {
-
+        SetNomeBiblioteca(nome);
+        SetEndereco(endereco);
     }
 
     public void SetNomeBiblioteca(string nome)
@@ -24,4 +25,5 @@ internal class Biblioteca
     {
         Endereco = endereco;
     }
+
 }
