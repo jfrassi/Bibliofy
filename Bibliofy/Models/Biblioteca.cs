@@ -1,10 +1,10 @@
 
 namespace Bibliofy.Models;
-internal class Biblioteca
+public class Biblioteca
 {
     public string Nome { get; protected set; }
     public string Endereco { get; protected set; }
-    List<Livro> LivrosAlocados = new();
+    public List<Livro> LivrosAlocados = new();
     List<Usuario> ListaUsuarios = new();
 
     public Biblioteca

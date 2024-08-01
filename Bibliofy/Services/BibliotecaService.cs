@@ -1,43 +1,42 @@
+namespace Bibliofy.Services;
 using Bibliofy.Models;
 
-namespace Bibliofy.Services;
 
 public class BibliotecaService
 {
-    private List<Livro> livros = new();
-
-    public void AdicionarLivro(Livro livro)
+    public void AdicionarLivroABiblioteca(Livro livro, Biblioteca biblioteca)
     {
-        livros.Add(livro);
+        biblioteca.LivrosAlocados.Add(livro);
     }
 
-    public List<Livro> ObterLivros()
+    public List<Livro> ObterLivrosDaBiblioteca(Biblioteca biblioteca)
     {
-        return livros;
+        return biblioteca.LivrosAlocados;
     }
 
-    public void RemoverLivro(Livro livro)
+    public void RemoverLivroDaBiblioteca(Livro livro, Biblioteca biblioteca)
     {
-        livros.Remove(livro);
+        biblioteca.LivrosAlocados.Remove(livro);
     }
 
-    public bool AtualizarLivro(Livro livro, string novoIsbn,string novoTitulo, string novoAutor, DateOnly novaData, Livro.Disponibilidade novoStatus )
+    public void AlterarBiblioteca(Biblioteca biblioteca, Biblioteca novaBiblioteca, Livro livro)
     {
-        //if enorme, ou um case?
-        if(livro != null)
-        {
-            if(novoIsbn == null)
-            {
-            novoIsbn = livro.ISBN;
-            } //--------------------------------- Será que dá certo?
-
-            livro.AtualizarDados(novoIsbn, novoTitulo, novoAutor, novaData, novoStatus);
-            return true;
-        }
-        else
-        {
-            Console.WriteLine($"Desculpe! o livro não foi encontrado!");
-            return false;
-        }
+        biblioteca.LivrosAlocados.Remove(livro);
+        novaBiblioteca.LivrosAlocados.Add(livro);
     }
+
+    // public bool AtualizarLivro(DateOnly novaData, Livro.Disponibilidade novoStatus Livro livro = null, string novoIsbn = null ,string novoTitulo = null, string novoAutor = null, )
+    // {
+    //     if(livro != null)
+    //     {
+            
+    //         livro.AtualizarDados(novoIsbn, novoTitulo, novoAutor, novaData, novoStatus);
+    //         return true;
+    //     }
+    //     else
+    //     {
+    //         Console.WriteLine($"Desculpe! o livro não foi encontrado!");
+    //         return false;
+    //     }
+    // }
 }

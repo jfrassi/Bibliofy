@@ -2,6 +2,7 @@ namespace Bibliofy.Models;
 
 public class Livro
 {
+    public List<Livro> ListaLivros = new();
     public string Titulo { get; protected set; }
     public string Autor { get; protected set; }
     public string ISBN { get; protected set; }
