@@ -4,7 +4,7 @@ public class Usuario
     public int Codigo { get; protected set; }
     public string NomeUsu { get; protected set; }
     public int Idade { get; protected set; }
-    List<Livro> LivrosEmprestados = new();
+    public List<Livro> LivrosEmprestados = new List<Livro>();
 
     public Usuario
     (

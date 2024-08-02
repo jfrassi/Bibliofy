@@ -33,8 +33,8 @@ internal class Emprestimo
     {
         DataEmprestimo = dataEmprestimo;
     }
-    public void SetDataDevolucao(DateOnly dataDevolucao)
+    public void SetDataDevolucao(DateOnly? dataDevolucao = null)
     {
-        DataDevolucao = dataDevolucao;
+        DataDevolucao = (DateOnly)dataDevolucao;
     }
 }

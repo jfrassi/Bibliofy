@@ -69,4 +69,10 @@ public class Livro
         Status = novoStatus.Value;
 
     }
+
+
+    public void AlterarStatus(Disponibilidade novoStatus)
+    {
+        Status = novoStatus;
+    }
 }

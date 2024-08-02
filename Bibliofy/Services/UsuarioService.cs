@@ -11,16 +11,6 @@ public class UsuarioService
         return usuarios;
     }
 
-    public void AdicionarUsuario(Usuario usuario)
-    {
-        usuarios.Add(usuario);
-    }
-
-    public void RemoverUsuario(int codigo)
-    {
-        var usuarioSelecionado = usuarios.Where(u => u.Codigo == codigo).FirstOrDefault();
-        usuarios.Remove(usuarioSelecionado);
-    }
 
     public bool AlterarUsuario(Usuario usuario, int novoCodigo, string novoNome, int novaIdade)
     {
@@ -31,7 +21,6 @@ public class UsuarioService
         }
 
         return false;
-
     }
     
 }
