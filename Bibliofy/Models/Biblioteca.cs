@@ -27,30 +27,40 @@ public class Biblioteca
     }
 
 
-        public void AdicionarLivroABiblioteca(Livro livro, Biblioteca biblioteca)
+        public void AdicionarLivroABiblioteca(Livro livro)
     {
-        biblioteca.LivrosAlocados.Add(livro);
+        LivrosAlocados.Add(livro);
     }
 
-    public List<Livro> ObterLivrosDaBiblioteca(Biblioteca biblioteca)
+    public List<Livro> ObterLivrosDaBiblioteca()
     {
-        return biblioteca.LivrosAlocados;
+        return LivrosAlocados;
     }
 
-    public void RemoverLivroDaBiblioteca(Livro livro, Biblioteca biblioteca)
+    public void RemoverLivroDaBiblioteca(Livro livro)
     {
-        biblioteca.LivrosAlocados.Remove(livro);
+        LivrosAlocados.Remove(livro);
     }
 
-    public void AlterarLivroreBiblioteca(Biblioteca biblioteca, Biblioteca novaBiblioteca, Livro livro)
+    public void AlterarLivroDeBiblioteca(Biblioteca biblioteca, Biblioteca novaBiblioteca, Livro livro)
     {
         biblioteca.LivrosAlocados.Remove(livro);
         novaBiblioteca.LivrosAlocados.Add(livro);
     }
 
-       public void AdicionarUsuarioABiblioteca(Usuario usuario, Biblioteca biblioteca)
+       public void AdicionarUsuarioABiblioteca(Usuario usuario)
     {
-        biblioteca.ListaUsuarios.Add(usuario);
+        ListaUsuarios.Add(usuario);
+    }
+
+    public void RemoverUsuarioDaBibioteca(Usuario usuario)
+    {
+        ListaUsuarios.Remove(usuario);
+    }
+
+    public List<Usuario> ObterUsuariosDaBilbioteca()
+    {
+        return ListaUsuarios;
     }
 
 }

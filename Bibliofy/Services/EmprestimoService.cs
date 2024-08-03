@@ -17,13 +17,17 @@ public class EmprestimoService
         }
     }
 
-    public void DevolverLivro(string parameter)
+    public void DevolverLivro(Livro livro, Usuario usuario)
     {
-        
+        if(livro.Status == Livro.Disponibilidade.Emprestado)
+        {
+            usuario.LivrosEmprestados.Remove(livro);
+            livro.AlterarStatus(Livro.Disponibilidade.Disponivel);
+        }
     }
 
-    public void ObterEmprestimos(string parameter)
+    public List<Livro> ObterEmprestimos(Usuario usuario)
     {
-        
+        return usuario.LivrosEmprestados;
     }
 }
