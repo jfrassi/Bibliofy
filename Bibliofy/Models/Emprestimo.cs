@@ -1,3 +1,5 @@
+using Bibliofy.Services;
+
 namespace Bibliofy.Models;
 
 internal class Emprestimo
@@ -36,5 +38,10 @@ internal class Emprestimo
     public void SetDataDevolucao(DateOnly? dataDevolucao = null)
     {
         DataDevolucao = (DateOnly)dataDevolucao;
+    }
+
+    public static implicit operator Emprestimo(EmprestimoService v)
+    {
+        throw new NotImplementedException();
     }
 }

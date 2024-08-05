@@ -32,9 +32,21 @@ public class Biblioteca
         LivrosAlocados.Add(livro);
     }
 
-    public List<Livro> ObterLivrosDaBiblioteca()
+    public void ObterLivrosDaBiblioteca()
     {
-        return LivrosAlocados;
+        var livros = LivrosAlocados.Select(p => new{
+            titulo = p.Titulo,
+            isbn = p.ISBN,
+            autor = p.Autor,
+            dataPublicacao = p.DataPublicacao,
+            status = p.Status
+        }).ToList();
+
+        foreach(var livro in livros)
+        {
+            Console.WriteLine($"{livro.titulo} - {livro.autor} - {livro.dataPublicacao} - {livro.dataPublicacao} - {livro.status} - {livro.isbn}");
+            
+        }
     }
 
     public void RemoverLivroDaBiblioteca(Livro livro)
@@ -58,9 +70,18 @@ public class Biblioteca
         ListaUsuarios.Remove(usuario);
     }
 
-    public List<Usuario> ObterUsuariosDaBilbioteca()
+    public void ObterUsuariosDaBilbioteca()
     {
-        return ListaUsuarios;
+        var usuarios = ListaUsuarios.Select(p => new{
+            idade = p.Idade,
+            nome = p.NomeUsu,
+            codigo = p.Codigo
+        }).ToList();
+        foreach(var usuario in usuarios)
+        {
+            Console.WriteLine($"{usuario.codigo} - {usuario.nome} - {usuario.idade} anos");
+            
+        }
     }
 
 }

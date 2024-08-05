@@ -12,8 +12,8 @@ Usuario luiz = new Usuario(3, "Luiz", 30);
 Biblioteca biblioteca1 = new Biblioteca("Biblioteca Central", "Rua Principal, 123");
 Biblioteca biblioteca2 = new Biblioteca("Biblioteca Comunitária", "Rua Secundária, 456");
 
-List<Livro> livrosDaBilbioteca = biblioteca2.ObterLivrosDaBiblioteca();
-List<Usuario> usuariosDaBiblioteca = biblioteca2.ObterUsuariosDaBilbioteca();
+
+
 biblioteca1.AdicionarLivroABiblioteca(SrAneis);
 biblioteca2.AdicionarLivroABiblioteca(orwell);
 biblioteca1.AdicionarLivroABiblioteca(casmurro);
@@ -21,16 +21,12 @@ biblioteca1.AdicionarUsuarioABiblioteca(davi);
 biblioteca1.AdicionarUsuarioABiblioteca(joao);
 biblioteca2.AdicionarUsuarioABiblioteca(luiz);
 
+EmprestimoService emprestimos = new EmprestimoService();
+// biblioteca1.ObterUsuariosDaBilbioteca();
+biblioteca1.ObterLivrosDaBiblioteca();
+emprestimos.EmprestarLivro(orwell, joao);
+biblioteca1.ObterLivrosDaBiblioteca();
 
-foreach(Usuario usuario in usuariosDaBiblioteca)
-{
-    Console.WriteLine($"{usuario.NomeUsu} - {usuario.Idade}");
-    
-}
 
-foreach(Livro livro in livrosDaBilbioteca)
-{
-    Console.WriteLine($"{livro.Titulo} - {livro.DataPublicacao} - {livro.Autor} - {livro.ISBN}");
-    
-}
+
 
