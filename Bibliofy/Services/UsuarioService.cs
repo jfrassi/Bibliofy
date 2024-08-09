@@ -2,7 +2,7 @@ namespace Bibliofy.Services;
 
 using Bibliofy.Models;
 
-public class UsuarioService 
+public class UsuarioService
 {
     List<Usuario> usuarios = new();
 
@@ -15,12 +15,12 @@ public class UsuarioService
     public bool AlterarUsuario(Usuario usuario, int novoCodigo, string novoNome, int novaIdade)
     {
         if (usuario != null)
-        { 
+        {
             usuario.AtualizarDadosUsuario(novoCodigo, novoNome, novaIdade);
             return true;
         }
 
         return false;
     }
-    
+
 }
