@@ -8,6 +8,7 @@ var consultaLivros = bancoDados.GetLivros();
 foreach(var livro in consultaLivros)
 {
     Console.WriteLine($"{livro.Titulo} - {livro.Autor}");
+    Console.WriteLine($"teste");
     
 }
 
