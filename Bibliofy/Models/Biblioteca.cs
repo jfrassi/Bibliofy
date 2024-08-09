@@ -39,7 +39,7 @@ public class Biblioteca
             titulo = p.Titulo,
             isbn = p.ISBN,
             autor = p.Autor,
-            dataPublicacao = p.DataPublicacao,
+            dataPublicacao = p.DataDePublicacao,
             status = p.Status
         }).ToList();
 

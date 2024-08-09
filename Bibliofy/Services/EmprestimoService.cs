@@ -40,7 +40,7 @@ public class EmprestimoService
             titulo = p.Titulo,
             isbn = p.ISBN,
             autor = p.Autor,
-            dataPublicacao = p.DataPublicacao,
+            dataPublicacao = p.DataDePublicacao,
             status = p.Status
         }).ToList();
         foreach (var livro in emprestados)

@@ -3,16 +3,12 @@ using System.Runtime.CompilerServices;
 using Bibliofy.Models;
 using Bibliofy.Services;
 
-DatabaseConection bancoDados = new();
+DatabaseConection bancoDados = new("bibliofy");
 var consultaLivros = bancoDados.GetLivros();
 foreach(var livro in consultaLivros)
 {
     Console.WriteLine($"{livro.Titulo} - {livro.Autor}");
-    Console.WriteLine($"teste");
-    
 }
-
-
 
 
 
