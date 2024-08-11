@@ -1,5 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Dapper;
+using MySql.Data.MySqlClient;
 using Mysqlx.Crud;
 
 namespace Bibliofy.Models;
@@ -16,11 +18,14 @@ public class Livro
     [Column("ISBN")]
     public string ISBN { get; protected set; }
     [Column("DATA_DE_PUBLICACAO")]
-    public DateOnly DataDePublicacao { get; protected set; }
+    public DateTime DataDePublicacao { get; protected set; }
     [Column("DISPONIBILIDADE")]
     public Disponibilidade Status { get; protected set; }
     [ForeignKey("BIBLIOTECA")]
     public int Biblioteca_Id { get; protected set; }
+
+    [NotMapped]
+    public string DisponibilidadeString => Status.ToString();
     public enum Disponibilidade
     {
         Disponivel,
@@ -36,7 +41,7 @@ public class Livro
         string titulo,
         string autor,
         string isbn,
-        DateOnly dataPublicacao,
+        DateTime dataPublicacao,
         Disponibilidade status,
         int biblioteca_id
     )
@@ -47,6 +52,7 @@ public class Livro
         SetISBN(isbn);
         SetDataDePublicacao(dataPublicacao);
         SetDisponibilidade(status);
+        SetBibliotecaID(biblioteca_id);
     }
 
     private void SetID(int id)
@@ -65,7 +71,7 @@ public class Livro
     {
         ISBN = isbn;
     }
-    public void SetDataDePublicacao(DateOnly data)
+    public void SetDataDePublicacao(DateTime data)
     {
         DataDePublicacao = data;
     }
@@ -84,7 +90,7 @@ public class Livro
         string novoIsbn,
         string novoTitulo,
         string novoAutor,
-        DateOnly? novaData,
+        DateTime? novaData,
         Disponibilidade? novoStatus,
         int bibliotecaID
        )
@@ -98,7 +104,6 @@ public class Livro
         Biblioteca_Id = bibliotecaID;
 
     }
-
     public void AlterarStatus(Disponibilidade novoStatus)
     {
         Status = novoStatus;
