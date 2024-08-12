@@ -8,7 +8,7 @@ using Bibliofy.Services;
 LivroRespository LivroBD = new("bibliofy");
 
 
-LivroBD.ExcluirLivro(5);
+LivroBD.AtualizarDadosLivro(3, "Testando legal", "João Victor");
 
 
 

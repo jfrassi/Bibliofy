@@ -1,5 +1,6 @@
 namespace Bibliofy.Repositories;
 
+using System.Text;
 using Bibliofy.Models;
 using Dapper;
 using MySql.Data.MySqlClient;
@@ -66,13 +67,58 @@ public class LivroRespository
                 else
                 {
                     Console.WriteLine($"Desculpe esse livro não existe");
-                    
+
                 }
             }
             catch (MySqlException ex)
             {
                 Console.WriteLine($"Erro {ex.Message}");
-                
+
             }
+    }
+
+    public void AtualizarDadosLivro(int Livroid, string? novoTitulo = null, string? novoAutor = null, DateTime? novaDataDePublicacao = null )
+    {
+        using(var connection = new MySqlConnection(_connectionString))
+        {
+                var parametros = new DynamicParameters();
+                var livroExistente = connection.QueryFirstOrDefault<Livro>("SELECT * FROM LIVROS WHERE ID = @ID;", new {ID = Livroid});
+                var sql = new StringBuilder("UPDATE LIVROS SET ");
+                if(livroExistente != null)
+                {
+                    bool isFirst = true;
+                    if(novoTitulo != null)
+                    {
+                        if (!isFirst) sql.Append(", ");
+                        sql.Append("Titulo = @TITULO");
+                        parametros.Add("Titulo", novoTitulo);
+                        isFirst = false;
+                    }
+                    if(novoAutor != null)
+                    {
+                        if (!isFirst) sql.Append(", ");
+                        sql.Append("Autor = @AUTOR");
+                        parametros.Add("Autor", novoAutor);
+                        isFirst = false;
+                    }
+                    if(novaDataDePublicacao != null)
+                    {
+                        if (!isFirst) sql.Append(", ");
+                        sql.Append("DataDePublicacao = @DATADEPUBLICACAO");
+                        parametros.Add("DataDePublicacao", novaDataDePublicacao);
+                        isFirst = false;
+                    }
+
+                    sql.Append(" WHERE ID = @ID");
+                    parametros.Add("ID", Livroid);
+                    Console.WriteLine($"{sql}");
+                    
+                }
+                else 
+                {
+                    Console.WriteLine($"Desculpe o livro que você está procurando não existe");
+                    
+                }
+        }
     }
 }
