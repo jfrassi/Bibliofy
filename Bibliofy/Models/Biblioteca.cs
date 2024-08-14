@@ -76,12 +76,12 @@ public class Biblioteca
         var usuarios = ListaUsuarios.Select(p => new
         {
             idade = p.Idade,
-            nome = p.NomeUsu,
-            codigo = p.Codigo
+            nome = p.Nome_usuario,
+            ID = p.ID
         }).ToList();
         foreach (var usuario in usuarios)
         {
-            Console.WriteLine($"{usuario.codigo} - {usuario.nome} - {usuario.idade} anos");
+            Console.WriteLine($"{usuario.ID} - {usuario.nome} - {usuario.idade} anos");
 
         }
     }

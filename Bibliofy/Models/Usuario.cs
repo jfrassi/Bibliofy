@@ -1,30 +1,30 @@
 namespace Bibliofy.Models;
 public class Usuario
 {
-    public int Codigo { get; protected set; }
-    public string NomeUsu { get; protected set; }
+
+    public int ID { get; protected set; }
+    public string Nome_usuario { get; protected set; }
     public int Idade { get; protected set; }
     public List<Livro> LivrosEmprestados = new List<Livro>();
 
+    public Usuario(){}
     public Usuario
     (
-        int codigo,
         string nomeUsuario,
         int idade
     )
     {
-        SetCodigo(codigo);
         SetNomeUsu(nomeUsuario);
         SetIdade(idade);
     }
 
-    public void SetCodigo(int codigo)
+    public void SetID(int id)
     {
-        Codigo = codigo;
+        ID = id;
     }
     public void SetNomeUsu(string nome)
     {
-        NomeUsu = nome;
+        Nome_usuario = nome;
     }
     public void SetIdade(int idade)
     {
@@ -34,13 +34,13 @@ public class Usuario
 
     public void AtualizarDadosUsuario
     (
-        int novoCodigo,
+        int novoID,
         string novoNome,
         int novaIdade
     )
     {
-        Codigo = novoCodigo;
-        NomeUsu = novoNome;
+        ID = novoID;
+        Nome_usuario = novoNome;
         Idade = novaIdade;
     }
 }

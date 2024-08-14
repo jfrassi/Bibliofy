@@ -77,48 +77,69 @@ public class LivroRespository
             }
     }
 
-    public void AtualizarDadosLivro(int Livroid, string? novoTitulo = null, string? novoAutor = null, DateTime? novaDataDePublicacao = null )
+    public void AtualizarDadosLivro(int Livroid, string? novoTitulo = null, string? novoAutor = null, string? novoIsbn = null, DateTime? novaDataDePublicacao = null, Livro.Disponibilidade? novaDisponibilidade = null, int? novoIdBiblioteca = null)
     {
-        using(var connection = new MySqlConnection(_connectionString))
+        using (var connection = new MySqlConnection(_connectionString))
         {
-                var parametros = new DynamicParameters();
-                var livroExistente = connection.QueryFirstOrDefault<Livro>("SELECT * FROM LIVROS WHERE ID = @ID;", new {ID = Livroid});
-                var sql = new StringBuilder("UPDATE LIVROS SET ");
-                if(livroExistente != null)
+            var parametros = new DynamicParameters();
+            var livroExistente = connection.QueryFirstOrDefault<Livro>("SELECT * FROM LIVROS WHERE ID = @ID;", new { ID = Livroid });
+            var sql = new StringBuilder("UPDATE LIVROS SET ");
+            if (livroExistente != null)
+            {
+                bool isFirst = true;
+                if (novoTitulo != null)
                 {
-                    bool isFirst = true;
-                    if(novoTitulo != null)
-                    {
-                        if (!isFirst) sql.Append(", ");
-                        sql.Append("Titulo = @TITULO");
-                        parametros.Add("Titulo", novoTitulo);
-                        isFirst = false;
-                    }
-                    if(novoAutor != null)
-                    {
-                        if (!isFirst) sql.Append(", ");
-                        sql.Append("Autor = @AUTOR");
-                        parametros.Add("Autor", novoAutor);
-                        isFirst = false;
-                    }
-                    if(novaDataDePublicacao != null)
-                    {
-                        if (!isFirst) sql.Append(", ");
-                        sql.Append("DataDePublicacao = @DATADEPUBLICACAO");
-                        parametros.Add("DataDePublicacao", novaDataDePublicacao);
-                        isFirst = false;
-                    }
+                    if (!isFirst) sql.Append(", ");
+                    sql.Append("Titulo = @TITULO");
+                    parametros.Add("Titulo", novoTitulo);
+                    isFirst = false;
+                }
+                if (novoAutor != null)
+                {
+                    if (!isFirst) sql.Append(", ");
+                    sql.Append("Autor = @AUTOR");
+                    parametros.Add("Autor", novoAutor);
+                    isFirst = false;
+                }
+                if (novoIsbn != null)
+                {
+                    if (!isFirst) sql.Append(", ");
+                    sql.Append("Isbn = @ISBN");
+                    parametros.Add("Isbn", novoIsbn);
+                    isFirst = false;
+                }
+                if (novaDataDePublicacao != null)
+                {
+                    if (!isFirst) sql.Append(", ");
+                    sql.Append("DataDePublicacao = @DATA_DE_PUBLICACAO");
+                    parametros.Add("DataDePublicacao", novaDataDePublicacao);
+                    isFirst = false;
+                }
+                if (novaDisponibilidade != null)
+                {
+                    if (!isFirst) sql.Append(", ");
+                    sql.Append("Disponibilidade = @DISPONIBILIDADESTRING");
+                    parametros.Add("DISPONIBILIDADESTRING", novaDisponibilidade);
+                    isFirst = false;
+                }
+                if (novoIdBiblioteca != null)
+                {
+                    if (!isFirst) sql.Append(", ");
+                    sql.Append("Biblioteca_id = @BIBLIOTECA_ID");
+                    parametros.Add("Biblioteca_id", novoIdBiblioteca);
+                    isFirst = false;
+                }
 
-                    sql.Append(" WHERE ID = @ID");
-                    parametros.Add("ID", Livroid);
-                    Console.WriteLine($"{sql}");
-                    
-                }
-                else 
-                {
-                    Console.WriteLine($"Desculpe o livro que você está procurando não existe");
-                    
-                }
+                sql.Append(" WHERE ID = @ID");
+                parametros.Add("ID", Livroid);
+                connection.Execute(sql.ToString(), parametros);
+                Console.WriteLine($"Dados atualizados com sucesso!");
+            }
+            else
+            {
+                Console.WriteLine($"Desculpe o livro que você está procurando não existe");
+
+            }
         }
     }
 }
