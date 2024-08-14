@@ -14,7 +14,7 @@ public class Usuario
         int idade
     )
     {
-        SetNomeUsu(nomeUsuario);
+        SetNomeUsuario(nomeUsuario);
         SetIdade(idade);
     }
 
@@ -22,7 +22,7 @@ public class Usuario
     {
         ID = id;
     }
-    public void SetNomeUsu(string nome)
+    public void SetNomeUsuario(string nome)
     {
         Nome_usuario = nome;
     }

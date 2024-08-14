@@ -6,16 +6,14 @@ using Bibliofy.Services;
 
 
 LivroRespository LivroBD = new("bibliofy");
-
 UsuarioRepository UsuarioBD = new("bibliofy");
+BibliotecaRepository BibliotecaBD = new("bibliofy");
 
-Usuario joao = new Usuario("João Victor Frassi", 23);
+// BibliotecaBD.ObterBibliotecas();
+Biblioteca saraiva = new("Saraiva", "Avenidade 1111");
+BibliotecaBD.InserirBiblioteca(saraiva);
 
 
-
-// UsuarioBD.ObterUsuários();
-UsuarioBD.ExcluirUsuario(7);
-// UsuarioBD.ObterUsuários();
 
 
 

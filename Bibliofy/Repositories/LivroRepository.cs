@@ -48,7 +48,7 @@ public class LivroRespository
         }
     }
 
-    public void ExcluirLivro(int livroId)
+    public void RemoverLivro(int livroId)
     {
         using (var connection = new MySqlConnection(_connectionString))
             try

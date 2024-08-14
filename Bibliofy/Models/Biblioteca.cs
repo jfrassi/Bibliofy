@@ -2,11 +2,13 @@
 namespace Bibliofy.Models;
 public class Biblioteca
 {
+    public int ID { get; protected set; }
     public string Nome { get; protected set; }
     public string Endereco { get; protected set; }
     List<Livro> LivrosAlocados = new();
     List<Usuario> ListaUsuarios = new();
 
+    public Biblioteca() { }
     public Biblioteca
     (
         string nome,
